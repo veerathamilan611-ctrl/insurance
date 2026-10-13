@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: insurancemarket
+    database: INSURANCE_DB_SATYASUDAR
+    schema: SOURCE
+    tables:
+      - name: customers
+      - name: policies
+      - name: advisors
+      - name: conversionfunnel
+      - name: campaigns
+
+  - name: marketing_lookup
+    database: INSURANCE_DB_SATYASUDAR
+    schema: STAGE
+    tables:
+      - name: lkp_marketing_channel_group

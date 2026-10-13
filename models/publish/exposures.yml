@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: insurancemarket_dashboard
+    label: InsuranceMarket Analytics Dashboard
+    type: dashboard
+    maturity: medium
+    description: >
+      Dashboard for policy sales, advisor performance,
+      funnel conversion, and marketing effectiveness.
+    depends_on:
+      - ref('vw_policy_sales')
+      - ref('vw_advisor_performance')
+      - ref('vw_funnel_conversion')
+      - ref('vw_marketing_by_channel_group')
+    owner:
+      name: Systech Practice
+      email: REPLACE_WITH_VALID_TEAM_EMAIL

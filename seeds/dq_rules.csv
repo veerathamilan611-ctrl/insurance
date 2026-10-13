@@ -1,0 +1,14 @@
+
+rule_id,model,description,dbt_test,severity,action
+DQ06,int_policies,Policy customer ID must exist in customers,relationships,warn,Map to -1
+DQ08,int_policies,Policy has no assigned advisor ID,not_null,warn,Map to -1
+DQ09,int_policies,Advisor Direct policy has no advisor,advisor_direct_missing_advisor,warn,Flag
+DQ11,int_policies,Policy emirate differs from customer emirate,policy_customer_emirate_mismatch,warn,Document
+DQ13,int_policies,Source Active but expired before load date,active_policy_expired,warn,Derive Expired
+DQ16,int_policies,Duplicate customer product and issue date,duplicate_customer_product_issue_date,warn,Flag
+DQ23,int_leads,Stage 3 date before Stage 2 date,stage3_before_stage2,warn,Flag
+DQ24,int_leads,Purchase date before Stage 3 date,purchase_before_stage3,warn,Flag
+DQ25,int_leads,Purchase date before Stage 2 date,purchase_before_stage2,warn,Flag
+DQ27,int_leads,Lead not purchased and drop-off reason missing,missing_dropoff_reason,warn,Set Unknown
+DQ28,stg_conversion_funnel,Lead identical to another except LeadID,duplicate_leads,warn,Quarantine
+DQ32,stg_conversion_funnel,Funnel channel matching a campaign channel,funnel_campaign_channel_match,warn,Use lookup

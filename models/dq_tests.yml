@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_policies
+    columns:
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+              config:
+                severity: warn
+                store_failures: true
+                meta:
+                  dq_rule_id: DQ06
+
+      - name: advisor_id
+        data_tests:
+          - not_null:
+              config:
+                severity: warn
+                store_failures: true
+                meta:
+                  dq_rule_id: DQ08

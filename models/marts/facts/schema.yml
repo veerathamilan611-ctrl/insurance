@@ -1,0 +1,146 @@
+version: 2
+
+models:
+  - name: fact_policy
+    columns:
+      - name: customer_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+
+      - name: advisor_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_advisor')
+                field: advisor_key
+
+      - name: product_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_key
+
+      - name: partner_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_partner')
+                field: partner_key
+
+      - name: sales_channel_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_sales_channel')
+                field: sales_channel_key
+
+      - name: emirate_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_emirate')
+                field: emirate_key
+
+      - name: issue_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: expiry_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+  - name: fact_campaign_performance
+    columns:
+      - name: campaign_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_campaign')
+                field: campaign_key
+
+      - name: start_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: end_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+
+
+
+                
+
+  - name: fact_lead_funnel
+    columns:
+      - name: lead_source_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_lead_source')
+                field: lead_source_key
+
+      - name: product_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_key
+
+      - name: sales_channel_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_sales_channel')
+                field: sales_channel_key
+
+      - name: quote_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: stage1_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: stage2_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: stage3_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: purchase_date_sk
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key

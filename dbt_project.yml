@@ -56,6 +56,7 @@ seeds:
 
     dq_rules:
       +schema: AUDIT
+      +quote_columns: false
       +column_types:
         rule_id: VARCHAR
         model: VARCHAR

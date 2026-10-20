@@ -1,4 +1,3 @@
-
 rule_id,model,description,dbt_test,severity,action
 DQ06,int_policies,Policy customer ID must exist in customers,relationships,warn,Map to -1
 DQ08,int_policies,Policy has no assigned advisor ID,not_null,warn,Map to -1
@@ -11,4 +10,4 @@ DQ24,int_leads,Purchase date before Stage 3 date,purchase_before_stage3,warn,Fla
 DQ25,int_leads,Purchase date before Stage 2 date,purchase_before_stage2,warn,Flag
 DQ27,int_leads,Lead not purchased and drop-off reason missing,missing_dropoff_reason,warn,Set Unknown
 DQ28,stg_conversion_funnel,Lead identical to another except LeadID,duplicate_leads,warn,Quarantine
-DQ32,stg_conversion_funnel,Funnel channel matching a campaign channel,funnel_campaign_channel_match,warn,Use lookup
+DQ32,stg_conversion_funnel,Funnel-to-campaign channel mapping requires business confirmation,funnel_campaign_channel_match,warn,Pending business clarification; do not infer campaign attribution from channel names alone

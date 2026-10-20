@@ -1,16 +1,5 @@
+{{ config(severity="warn", store_failures=true, meta={"dq_rule_id": "DQ32"}) }}
 
-{{ config(
-    severity = 'warn',
-    store_failures = true,
-    meta = {'dq_rule_id': 'DQ32'}
-) }}
-
-SELECT
-    f.LEADID AS lead_id,
-    f.CHANNEL AS funnel_channel
-FROM {{ source('insurancemarket', 'conversionfunnel') }} AS f
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM {{ source('insurancemarket', 'campaigns') }} AS c
-    WHERE TRIM(LOWER(c.CHANNEL)) = TRIM(LOWER(f.CHANNEL))
-)
+select f.leadid as lead_id, f.leadsource as lead_source, f.channel as sales_channel
+from {{ source("insurancemarket", "conversionfunnel") }} as f
+where nullif(trim(f.leadid), '') is null

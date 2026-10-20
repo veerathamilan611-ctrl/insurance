@@ -22,9 +22,7 @@ with
                     stage3_date,
                     policy_purchased,
                     purchase_date,
-                    drop_off_reason,
-                    _ingested_ts,
-                    _source_file_name
+                    drop_off_reason
                 order by lead_id
             )
             = 1
